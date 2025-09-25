@@ -6,6 +6,7 @@ Scanner s = new Scanner(System.in);
 String operadorstring;
 char operador;
 double num1, num2;
+double resultado = 0;
 
 System.out.print("Insira o primeiro numero que deseja calcular: ");
 num1 = s.nextDouble();
@@ -15,23 +16,35 @@ s.nextLine();
 System.out.print("Insira qual operador aritmético vai usar (+, -, /, * - adição, subtração, divisão e multiplicação): ");
 operadorstring = s.nextLine();
 operador = operadorstring.charAt(0);
-if(operador == ('+') || operador == ('-') || operador == ('*') || operador == ('/')){
-if(operador == ('+')){
-System.out.print("Resultado: " + (num1 + num2 ));
+//if(operador == ('+') || operador == ('-') || operador == ('*') || operador == ('/')){
+//if(operador == ('+')){
+//System.out.print("Resultado: " + (num1 + num2 ));
+//}
+//else if(operador == ('-')){
+  //  System.out.print("Resultado: " + (num1 - num2 ));
+   // }
+    //else if(operador == ('*')){
+      //  System.out.print("Resultado: " + (num1 * num2 ));
+        //}else if(operador == ('/')){
+          //  System.out.print("Resultado: " + (num1 / num2 ));
+            //}
+
+//}else{
+  //  System.out.print("Insira um operador valido");
+//}
+switch(operador){
+    case '+':  resultado = num1 + num2;
+    break;
+    case '/':  resultado = num1 / num2;
+    break;
+    case '*':  resultado = num1 * num2;
+    break;
+    case '-':  resultado = num1 - num2;
+    break;
+
+        default: System.out.println("Operador inválido!");
 }
-else if(operador == ('-')){
-    System.out.print("Resultado: " + (num1 - num2 ));
-    }
-    else if(operador == ('*')){
-        System.out.print("Resultado: " + (num1 * num2 ));
-        }else if(operador == ('/')){
-            System.out.print("Resultado: " + (num1 / num2 ));
-            }
 
-}else{
-    System.out.print("Insira um operador valido");
-}
-
-
+System.out.print("Resultado: " + num1 + operador + num2 + "=" + resultado);
     }
 }
